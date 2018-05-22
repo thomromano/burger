@@ -13,7 +13,7 @@ function printQuestionMarks(num) {
   return arr.toString();
 }
 
-function objToSql(ob) {
+function sqlObject(ob) {
   
   var arr = [];
 
@@ -56,11 +56,11 @@ var orm = {
   },
 
 
-  update: function(table, objColVals, condition, cb) {
+  update: function(table, ObjVal, condition, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += sqlObject(ObjVal);
     queryString += " WHERE ";
     queryString += condition;
 
